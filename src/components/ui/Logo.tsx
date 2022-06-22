@@ -44,7 +44,6 @@ export default function Logo() {
 	};
 
 	onMount(() => {
-		console.log(styles);
 		playForward();
 	});
 
