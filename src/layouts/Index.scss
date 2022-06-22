@@ -1,0 +1,47 @@
+@import url(../fonts/inter/inter.css);
+@import url(../fonts/kg-always-a-good-time/kg-always-a-good-time.css);
+@import url(../fonts/material-icons/material-icons.css);
+@import url(../fonts/roboto-mono/roboto-mono.css);
+@import url(../fonts/minecraft/minecraft.css);
+@import "../styles/material-colors.scss";
+
+* {
+	margin: 0;
+}
+
+html,
+body {
+	// for mobile
+	overflow-x: hidden;
+}
+
+body {
+	font-family: "Inter", sans-serif;
+}
+@supports (font-variation-settings: normal) {
+	body {
+		font-family: "Inter var", sans-serif;
+	}
+}
+
+.cursive {
+	font-family: "KG Always A Good Time", cursive;
+	text-transform: lowercase;
+	font-weight: 400 !important; // because there is no other weight
+	letter-spacing: 0 !important; // because it would ruin the font
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.05em;
+}
+
+img {
+	border-radius: 8px;
+}
+
+a {
+	text-decoration: none;
+	color: material-color("pink", "500");
+}

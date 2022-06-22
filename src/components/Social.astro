@@ -1,0 +1,152 @@
+---
+import Emoji from "./ui/emoji/Emoji.astro";
+import Vstack from "./ui/Vstack.astro";
+import Hstack from "./ui/Hstack.astro";
+
+---
+
+<style lang="scss">
+	@import "../styles/scale-on-hover.scss";
+	@import "../styles/cards.scss";
+
+	.description {
+		font-weight: 500;
+		width: 500px;
+		text-align: center;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.social {
+		>a>svg {
+			opacity: 0.3;
+			@include scaleOnHover(1.1);
+			margin: 0 4px;
+			height: 24px;
+		}
+	}
+
+	.view-code {
+		opacity: 0.2;
+		font-weight: 600;
+		margin-top: 16px;
+		width: 220px;
+
+		@include scaleOnHover(1.05);
+
+		svg {
+			height: 16px;
+			margin-right: 8px;
+		}
+	}
+
+	.emoji-domain {
+		font-size: 12px;
+		font-weight: 400;
+		margin-top: 8px;
+		margin-bottom: 32px;
+		width: 300px;
+		font-family: "Minecraft";
+
+		.emojis {
+			font-size: 1.2em;
+			letter-spacing: -2px;
+			margin-left: 0px;
+			margin-right: 2px;
+			margin-top: -2px;
+			opacity: 0.6;
+		}
+
+		.text {
+			opacity: 0.3;
+		}
+
+		// @keyframes minecraft-splash-text {
+		// 	0% {
+		// 		transform: scale(1);
+		// 	}
+		// 	50% {
+		// 		transform: scale(1.05);
+		// 	}
+		// 	100% {
+		// 		transform: scale(1);
+		// 	}
+		// }
+
+		// animation-duration: 0.5s;
+		// animation-name: minecraft-splash-text;
+		// animation-timing-function: ease;
+		// animation-iteration-count: infinite;
+
+		// @include scaleOnHover(1.05);
+	}
+
+	@include cards-max-1 {
+		.view-code {
+			font-size: 0.8em;
+			margin-top: 8px;
+
+			svg {
+				height: 12px;
+				margin-right: 4px;
+			}
+		}
+
+		.emoji-domain {
+			margin-bottom: 32px;
+		}
+	}
+</style>
+<Vstack>
+	<h2 class="description">
+		<!-- <Emoji emoji="🌺" />
+	<Emoji emoji="🦊" />
+	<Emoji emoji="🦋" /> -->
+		<Emoji emoji="🦊" />
+		<Emoji emoji="🍃" />
+		<span style="
+				opacity: 0.4;
+				font-weight: 600;
+				margin-left: 8px;
+				margin-right: 8px;
+			">
+			game dev fox girl
+		</span>
+		<span style="
+				opacity: 0.3;
+				font-size: 0.7em;
+				font-weight: 700;
+				margin-right: 8px;
+			">
+			she/they
+		</span>
+		<Emoji emoji="🏳️‍⚧️" />
+		<Emoji emoji="lesbian-flag" />
+	</h2>
+	<a href="https://xn--3h8h64hda.ws" style="text-decoration: none; color: #000" class="emoji-domain">
+		<Hstack>
+			<span class="text">now available at www.</span>
+			<span class="emojis">
+				<Emoji emoji="🌺" />
+				<Emoji emoji="🦊" />
+				<Emoji emoji="🦋" />
+			</span>
+			<span class="text">.ws!</span>
+		</Hstack>
+	</a>
+	<div class="social">
+		<!-- <a *ngFor="let social of social" [href]="social.url">
+			<svg [socialIcon]="social.name"></svg>
+		</a> -->
+		<a rel="me" href="https://mastodon.cutelab.space/@maki" style="display: none">
+			Mastodon
+		</a>
+	</div>
+	<a href="https://github.com/makitsune/maki.cafe" style="text-decoration: none; color: #000" class="view-code">
+		<Hstack>
+			<!-- <svg socialIcon="github"></svg> -->
+			View the site's code
+		</Hstack>
+	</a>
+</Vstack>

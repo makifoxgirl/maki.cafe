@@ -1,0 +1,57 @@
+---
+import Index from '../layouts/Index.astro';
+import Logo from "../components/ui/Logo";
+import Vstack from "../components/ui/Vstack.astro";
+import Social from "../components/Social.astro";
+---
+
+<style lang="scss">
+	.home {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		width: 100%;
+
+		&.fade-in {
+			@keyframes home-fade-in {
+				0% {
+					opacity: 0;
+				}
+
+				100% {
+					opacity: 1;
+				}
+			}
+
+
+			animation-name: home-fade-in;
+			animation-duration: 0.5s;
+			animation-timing-function: linear;
+			transform-origin: 0 0;
+
+		}
+
+		.logo {
+			width: 400px;
+			max-width: 400px;
+			margin-top: 64px;
+		}
+
+		.social {
+			// margin-bottom: 64px;
+			margin-bottom: 24px;
+			margin-top: 24px;
+		}
+	}
+</style>
+<Index>
+	<div class="home fade-in">
+		<div class="logo">
+			<Logo client:load />
+		</div>
+		<div class="social">
+			<Social />
+		</div>
+	</div>
+</Index>
